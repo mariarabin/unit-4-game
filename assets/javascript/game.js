@@ -1,19 +1,30 @@
 $(document).ready(function () {
     alert("Get Ready!!!");
 
+    $("#greenFront").justFlipIt({
+        Click: true,
+        Template: '1'
+    });
+    $("#pinkFront").justFlipIt({
+        Click: true,
+        Template: '2'
+    });
+    $("#purpleFront").justFlipIt({
+        Click: true,
+        Template: '3'
+    });
+    $("#whiteFront").justFlipIt({
+        Click: true,
+        Template: '4'
+    });
+
+    //reset game button
     $("button").click(function () {
         resetGame();
     });
 
-    $("#green").click(function () {
-        $("#block").animate({
-            width: "70%",
-            opacity: 0.4,
-            marginLeft: "0.6in",
-            fontSize: "3em",
-            borderWidth: "10px"
-        }, 1500);
-    });
+
+
 
 
 
