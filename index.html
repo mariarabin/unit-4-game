@@ -29,66 +29,75 @@
                     <h1>Crystal Collector 👑</h1>
                     <h6>Photo by rawpixel.com from Pexels</h6>
                 </section>
-                <br>
-                <p>You will be given a random number at the start of the game.</p><br>
-                <br>
-                <p>There are four crystals below. By clicking on a crystal you wwill add a specific amount of points to
-                    your total score.</p>
-                <div class="row">
-                    <div class="col-md-6">
-                        <h3 id="targetNu">Target Number:<br><br><span id=target>0</span></h3>
-                    </div>
-                    <div class="col-md-6">
-                        <h3 id="currentNu">Current Number:<br><br><span id=current>0</span></h3>
-                    </div>
-                </div>
-                <br>
-
-                <div class="row">
-                    <div class="col-md-3">
-                        <img id="greenFront" src="./assets/images/green1.png" height="200px" width="200px" ;></img>
-                        <h1 id="greenBack"></h1>
-                    </div>
-                    <div class="col-md-3">
-                        <img id="pinkFront" src="./assets/images/pink1.png" height="200px" width="200px"></img>
-
-                        <h1 id="pinkBack"></h1>
-                    </div>
-                    <div class="col-md-3">
-                        <img id="purpleFront" src="./assets/images/yellow1.png" height="200px" width="200px"></img>
-                        <h1 id="purpleBack"></h1>
-                    </div>
-                    <div class="col-md-3">
-                        <img id="whiteFront" src="./assets/images/white1.png" height="200px" width="200px"></img>
-                        <h1 id="whiteBack"></h1>
-                    </div>
-
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-6">
-                        <h3 id="wins">Wins:<br><br><span id=win>0</span></h3>
-                    </div>
-                    <div class="col-md-6">
-                        <h3 id="losses">Losses:<br><br><span id=loss>0</span></h3>
-                    </div>
-                </div>
-                <br>
                 <div class="row">
                     <div class="col-md-12">
-                        <button id="reset" onClick="resetGame();">Reset</button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <hr>
-                        <h2 id="start" style="text-align:center;"><span class="blinking">Have Fun!!!</span></h2>
+                        <p><b>Here's how the app. works:</b></p>
+                        <ul>
+                            <li>➡️ You will be given a random number at the start of the game.</li>
+                            <li>️➡️ There are four crystals below. By clicking on a crystal, you will add a specific
+                                amount of points to your total score.</li>
+                            <li>➡️ You will win the game by matching your total score to the random number, you lose at
+                                the game if your total score goes above the random number.</li>
+                            <li>➡️ The value of eah crystal is hidden from you until you click on it.</li>
+
+                            <li>➡️ Each time the game starts, the game will change the values of each crystal.</li>
+                        </ul>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3 id="targetNu"><b>Target Number:</b><br><br><span id=target style="color:red">0</span></h3>
+                            </div>
+                            <div class="col-md-6">
+                                <h3 id="currentNu"><b>Current Number:</b><br><br><span id=current style="color:blue">0</span></h3>
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img id="greenFront" src="./assets/images/green1.png" height="200px" width="200px" ;></img>
+                                <h1 id="greenBack"></h1>
+                            </div>
+                            <div class="col-md-3">
+                                <img id="pinkFront" src="./assets/images/pink1.png" height="200px" width="200px"></img>
+
+                                <h1 id="pinkBack"></h1>
+                            </div>
+                            <div class="col-md-3">
+                                <img id="purpleFront" src="./assets/images/yellow1.png" height="200px" width="200px"></img>
+                                <h1 id="purpleBack"></h1>
+                            </div>
+                            <div class="col-md-3">
+                                <img id="whiteFront" src="./assets/images/white1.png" height="200px" width="200px"></img>
+                                <h1 id="whiteBack"></h1>
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3 id="wins"><b>🏆 Wins:</b><br><br><span id=win>0</span></h3>
+                            </div>
+                            <div class="col-md-6">
+                                <h3 id="losses"><b>🥧 Losses:</b><br><br><span id=loss>0</span></h3>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button id="reset" onClick="resetGame();" style="color:green"></b>Reset</b></button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <hr>
+                                <h2 id="start" style="text-align:center;"><span class="blinking"></b>Have Fun🤸‍♀️!!!</b></span></h2><br>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <script src="./assets/javascript/game.js"></script>
+            <script src="./assets/javascript/game.js"></script>
 
 </body>
 

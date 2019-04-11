@@ -1,10 +1,10 @@
 // Page loads as a start of the game
 $(document).ready(function () {
-    alert("Get Ready!!!");
+    alert("Let's get R-E-A-D-Y👾!!!");
     var targetNum = Math.floor((Math.random() * 100) + 4);
     $("#target").text(targetNum);
 
-    // VARIABLES
+    // VARIABLES===========================
 
     var crystalOne = Math.floor((Math.random() * 10) + 1);
     var crystalTwo = Math.floor((Math.random() * 10) + 1);
@@ -15,7 +15,7 @@ $(document).ready(function () {
     var losses = 0;
     var total = 0;
 
-    //MAIN PROCESS 1
+    //MAIN PROCESS 1====================
 
     //User is able to click the crystals
     // Crystals display values when clicked
@@ -107,16 +107,16 @@ $(document).ready(function () {
         if (total === targetNum) {
             wins++;
             $("#win").text(("" + wins));
-            //alert('You win!');
+            alert('You win🎊!!!');
             //console.log("white1 total:" + total);
-            continueGame(); //to create a function below
+            continueGame();
         };
     }
 
     function checkLoss() {
         if (total !== targetNum && total > targetNum) {
             losses++;
-            //alert('You lose!');
+            alert('Sorry. You lose😔!');
             $("#loss").text(("" + losses));
             continueGame();
         };
@@ -144,7 +144,7 @@ $(document).ready(function () {
 
     //**************/Reset Game*****************
     function resetGame() {
-        alert("Game ends. Resetting");
+        alert("Game ends. Resetting💻");
         //setting back to original value
         var targetNum = Math.floor((Math.random() * 100) + 4);
 
@@ -166,6 +166,6 @@ $(document).ready(function () {
         $("#pink").text(crystalTwo);
         $("#purple").text(crystalThree);
         $("#white").text(crystalFour);
-        alert("Get Ready!!!");
+        alert("Get Ready🤖!!!");
     };
 });
