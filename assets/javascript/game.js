@@ -5,7 +5,6 @@ $(document).ready(function () {
     $("#target").text(targetNum);
 
     // VARIABLES
-    var targetNum = Math.floor((Math.random() * 100) + 4);
 
     var crystalOne = Math.floor((Math.random() * 10) + 1);
     var crystalTwo = Math.floor((Math.random() * 10) + 1);
@@ -24,54 +23,59 @@ $(document).ready(function () {
     $("#greenFront").on('click', function () {
         $("#greenFront").justFlipIt({
             Click: true,
-            Template: '1' ///how to make this as a random value???
+            Template: '<img id="greenFront" src="./assets/images/green1.png" height="200px" width="200px" ;></img>'
         });
-        total = total + $("greenBack");
+        total = total + crystalOne;
+        $("#current").text(("" + total));
+        console.log("green1 total:" + total);
+        checkWin();
+        checkLoss();
     });
 
     $("#pinkFront").on('click', function () {
         $("#pinkFront").justFlipIt({
             Click: true,
-            Template: '2'
+            Template: '<img id="greenFront" src="./assets/images/pink1.png" height="200px" width="200px" ;></img>'
         });
-        total = total + $("pinkBack");
+        total = total + crystalTwo;
+        $("#current").text(("" + total));
+        console.log("pink1 total:" + total);
+        checkWin();
+        checkLoss();
     });
 
 
     $("#purpleFront").on('click', function () {
         $("#purpleFront").justFlipIt({
             Click: true,
-            Template: '3'
+            Template: '<img id="purpleFront" src="./assets/images/yellow1.png" height="200px" width="200px"></img>'
         });
-        total = total + $("purpleBack");
+        total = total + crystalThree;
+        $("#current").text(("" + total));
+        console.log("yellow1 total:" + total);
+        checkWin();
+        checkLoss();
     });
 
 
     $("#whiteFront").on('click', function () {
         $("#whiteFront").justFlipIt({
             Click: true,
-            Template: '4'
+            Template: '<img id="whiteFront" src="./assets/images/white1.png" height="200px" width="200px"></img>'
         });
-        total = total + $("whiteBack");
+        total = total + crystalFour;
+        $("#current").text(("" + total));
+        console.log("white1 total:" + total);
+        checkWin();
+        checkLoss();
     });
 
     //User Wins
-    if (total === targetNum) {
-        $("#current").text(total);
-        wins++;
-        alert('You win!');
-        continueGame(); //to create a function below
-    };
 
     //User losses
-    if (total !== targetNum && total > targetNum) {
-        $("#current").text(total);
-        losses++;
-        alert('You lose!');
-        continueGame();
-    };
 
-    //reset game button
+
+    //RESET game button
     $("button").click(function () {
         resetGame();
     });
@@ -81,14 +85,14 @@ $(document).ready(function () {
     //Continue game
     function continueGame() {
         alert("Game continues...");
-        var targetNum = Math.floor((Math.random() * 100) + 4);
+        targetNum = Math.floor((Math.random() * 100) + 4);
 
-        var crystalOne = Math.floor((Math.random() * 10) + 1);
-        var crystalTwo = Math.floor((Math.random() * 10) + 1);
-        var crystalThree = Math.floor((Math.random() * 10) + 1);
-        var crystalFour = Math.floor((Math.random() * 10) + 1);
+        crystalOne = Math.floor((Math.random() * 10) + 1);
+        crystalTwo = Math.floor((Math.random() * 10) + 1);
+        crystalThree = Math.floor((Math.random() * 10) + 1);
+        crystalFour = Math.floor((Math.random() * 10) + 1);
 
-        var total = 0;
+        total = 0;
 
         //display
         $("#target").text(targetNum);
@@ -99,6 +103,24 @@ $(document).ready(function () {
         $("#white").text(crystalFour);
     };
 
+    function checkWin() {
+        if (total === targetNum) {
+            wins++;
+            $("#win").text(("" + wins));
+            //alert('You win!');
+            //console.log("white1 total:" + total);
+            continueGame(); //to create a function below
+        };
+    }
+
+    function checkLoss() {
+        if (total !== targetNum && total > targetNum) {
+            losses++;
+            //alert('You lose!');
+            $("#loss").text(("" + losses));
+            continueGame();
+        };
+    }
 
 
     //*********** */Blinking Function*************
