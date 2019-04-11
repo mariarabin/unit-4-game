@@ -79,6 +79,25 @@ $(document).ready(function () {
 
     //FUNCTIONS=================
     //Continue game
+    function continueGame() {
+        alert("Game continues...");
+        var targetNum = Math.floor((Math.random() * 100) + 4);
+
+        var crystalOne = Math.floor((Math.random() * 10) + 1);
+        var crystalTwo = Math.floor((Math.random() * 10) + 1);
+        var crystalThree = Math.floor((Math.random() * 10) + 1);
+        var crystalFour = Math.floor((Math.random() * 10) + 1);
+
+        var total = 0;
+
+        //display
+        $("#target").text(targetNum);
+        $("#current").text(total);
+        $("#green").text(crystalOne);
+        $("#pink").text(crystalTwo);
+        $("#purple").text(crystalThree);
+        $("#white").text(crystalFour);
+    };
 
 
 
