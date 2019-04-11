@@ -1,15 +1,15 @@
 // Page loads as a start of the game
 $(document).ready(function () {
     alert("Let's get R-E-A-D-Y👾!!!");
-    var targetNum = Math.floor((Math.random() * 100) + 4);
+    var targetNum = Math.floor((Math.random() * 120) + 19);
     $("#target").text(targetNum);
 
     // VARIABLES===========================
 
-    var crystalOne = Math.floor((Math.random() * 10) + 1);
-    var crystalTwo = Math.floor((Math.random() * 10) + 1);
-    var crystalThree = Math.floor((Math.random() * 10) + 1);
-    var crystalFour = Math.floor((Math.random() * 10) + 1);
+    var crystalOne = Math.floor((Math.random() * 12) + 1);
+    var crystalTwo = Math.floor((Math.random() * 12) + 1);
+    var crystalThree = Math.floor((Math.random() * 12) + 1);
+    var crystalFour = Math.floor((Math.random() * 12) + 1);
 
     var wins = 0;
     var losses = 0;
