@@ -1,33 +1,8 @@
+// Page loads as a start of the game
 $(document).ready(function () {
     alert("Get Ready!!!");
-
-    $("#greenFront").justFlipIt({
-        Click: true,
-        Template: '1'
-    });
-    $("#pinkFront").justFlipIt({
-        Click: true,
-        Template: '2'
-    });
-    $("#purpleFront").justFlipIt({
-        Click: true,
-        Template: '3'
-    });
-    $("#whiteFront").justFlipIt({
-        Click: true,
-        Template: '4'
-    });
-
-    //reset game button
-    $("button").click(function () {
-        resetGame();
-    });
-
-
-
-
-
-
+    var targetNum = Math.floor((Math.random() * 100) + 4);
+    $("#target").text(targetNum);
 
     // VARIABLES
     var targetNum = Math.floor((Math.random() * 100) + 4);
@@ -41,32 +16,73 @@ $(document).ready(function () {
     var losses = 0;
     var total = 0;
 
-    //MAIN PROCESS
-
-    // Page loads as a start of the game
+    //MAIN PROCESS 1
 
     //User is able to click the crystals
-
     // Crystals display values when clicked
 
-    //Total adds up
-    $("#current").text(total);
+    $("#greenFront").on('click', function () {
+        $("#greenFront").justFlipIt({
+            Click: true,
+            Template: '1' ///how to make this as a random value???
+        });
+        total = total + $("greenBack");
+    });
 
-    //User wins
-    $("#win").text(wins);
+    $("#pinkFront").on('click', function () {
+        $("#pinkFront").justFlipIt({
+            Click: true,
+            Template: '2'
+        });
+        total = total + $("pinkBack");
+    });
+
+
+    $("#purpleFront").on('click', function () {
+        $("#purpleFront").justFlipIt({
+            Click: true,
+            Template: '3'
+        });
+        total = total + $("purpleBack");
+    });
+
+
+    $("#whiteFront").on('click', function () {
+        $("#whiteFront").justFlipIt({
+            Click: true,
+            Template: '4'
+        });
+        total = total + $("whiteBack");
+    });
+
+    //User Wins
+    if (total === targetNum) {
+        $("#current").text(total);
+        wins++;
+        alert('You win!');
+        continueGame(); //to create a function below
+    };
 
     //User losses
-    $("#loss").text(losses);
+    if (total !== targetNum && total > targetNum) {
+        $("#current").text(total);
+        losses++;
+        alert('You lose!');
+        continueGame();
+    };
 
-
-    //User losses
-
-
-    //Continue game
+    //reset game button
+    $("button").click(function () {
+        resetGame();
+    });
 
 
     //FUNCTIONS=================
-    //Blinking Function
+    //Continue game
+
+
+
+    //*********** */Blinking Function*************
     setInterval(blinktext, 500);
     var txt = "";
     var count = 0;
@@ -84,7 +100,8 @@ $(document).ready(function () {
     }
 
 
-    //Reset Game
+
+    //**************/Reset Game*****************
     function resetGame() {
         alert("Game ends. Resetting");
         //setting back to original value
@@ -99,7 +116,6 @@ $(document).ready(function () {
         var losses = 0;
         var total = 0;
 
-
         //display
         $("#target").text(targetNum);
         $("#current").text(total);
@@ -111,20 +127,4 @@ $(document).ready(function () {
         $("#white").text(crystalFour);
         alert("Get Ready!!!");
     };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-})
+});
